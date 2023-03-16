@@ -19,7 +19,7 @@ import javax.swing.SwingConstants;
 public class EstruturaWhile1 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textInicial;
+	private JTextField txtInicial;
 	private JTextField txtFinal;
 	
 	String dados = "";
@@ -69,12 +69,12 @@ public class EstruturaWhile1 extends JFrame {
 		lblNmeroFinal.setBounds(10, 53, 113, 21);
 		contentPane.add(lblNmeroFinal);
 		
-		textInicial = new JTextField();
-		textInicial.setForeground(new Color(255, 255, 255));
-		textInicial.setBackground(new Color(17, 31, 74));
-		textInicial.setBounds(123, 10, 51, 20);
-		contentPane.add(textInicial);
-		textInicial.setColumns(10);
+		txtInicial = new JTextField();
+		txtInicial.setForeground(new Color(255, 255, 255));
+		txtInicial.setBackground(new Color(17, 31, 74));
+		txtInicial.setBounds(123, 10, 51, 20);
+		contentPane.add(txtInicial);
+		txtInicial.setColumns(10);
 		
 		txtFinal = new JTextField();
 		txtFinal.setForeground(Color.WHITE);
@@ -92,7 +92,7 @@ public class EstruturaWhile1 extends JFrame {
 		
 
 		JButton btnExecutar = new JButton("Executar");
-		btnExecutar.addActionListener(new ActionListener() {
+		btnExecutar.addActionListener(ActionEvent);
 			public void actionPerformed(ActionEvent e) {
 				
 				i = Integer.parseInt(txtInicial.getText());
