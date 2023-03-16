@@ -1,9 +1,9 @@
-package br.com.poo.estruturaif;
+package br.com.poo.estruturaif1;
 
 import java.util.Scanner;
 
 public class Estruturaif3 {
-
+	
 	public static void main(String[] args) {
 		double nota1,nota2,nota3,nota4,media;
 		Scanner entrada = new Scanner(System.in);
@@ -21,22 +21,10 @@ public class Estruturaif3 {
 		nota4 = entrada.nextDouble();
 		
 		media = (nota1+nota2+nota3+nota4)/4;
-	
-		System.out.println("A média do aluno é "+media);
 		
-		if(media >= 7) {
-			System.out.println("Aprovado");
-		}
-		else if(media <= 4) {
-			System.out.println("Reprovado");
-		}
-		else {
-			System.out.println("Recuperação");
-		}
+		System.out.println("A média do aluno é" );
 		
-				
 	}
-	
-	
-	
 }
+
+
