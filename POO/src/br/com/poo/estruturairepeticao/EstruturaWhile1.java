@@ -1,26 +1,25 @@
 package br.com.poo.estruturairepeticao;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import javax.swing.JLabel;
+import java.awt.EventQueue;
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.border.LineBorder;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import java.awt.Toolkit;
-import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 public class EstruturaWhile1 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtInicial;
-	private JTextField txtFinal;
+	private JTextField textField;
+	private JTextField textField_1;
 	
 	String dados = "";
 	int i;
@@ -46,71 +45,74 @@ public class EstruturaWhile1 extends JFrame {
 	 */
 	public EstruturaWhile1() {
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\joao.vasena\\Downloads\\índice.jpg"));
-		setBackground(new Color(17, 31, 64));
+		setBackground(Color.GRAY);
 		setTitle("Janela Principal");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 250, 402);
+		setBounds(100, 100, 211, 467);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(17, 31, 64));
+		contentPane.setToolTipText("");
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Número Inicial");
-		lblNewLabel.setFont(new Font("Calibri", Font.BOLD, 17));
-		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setBounds(10, 11, 113, 21);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblNmeroFinal = new JLabel("Número Final");
-		lblNmeroFinal.setForeground(Color.WHITE);
-		lblNmeroFinal.setFont(new Font("Calibri", Font.BOLD, 17));
-		lblNmeroFinal.setBounds(10, 53, 113, 21);
-		contentPane.add(lblNmeroFinal);
-		
-		txtInicial = new JTextField();
-		txtInicial.setForeground(new Color(255, 255, 255));
-		txtInicial.setBackground(new Color(17, 31, 74));
-		txtInicial.setBounds(123, 10, 51, 20);
+		JLabel txtInicial = new JLabel("Número Inicial");
+		txtInicial.setBackground(Color.LIGHT_GRAY);
+		txtInicial.setFont(new Font("Swis721 Hv BT", Font.PLAIN, 11));
+		txtInicial.setForeground(new Color(64, 64, 64));
+		txtInicial.setBounds(10, -13, 92, 112);
 		contentPane.add(txtInicial);
-		txtInicial.setColumns(10);
 		
-		txtFinal = new JTextField();
-		txtFinal.setForeground(Color.WHITE);
-		txtFinal.setColumns(10);
-		txtFinal.setBackground(new Color(17, 31, 74));
-		txtFinal.setBounds(123, 52, 51, 20);
+		JLabel txtFinal = new JLabel("Número Final");
+		txtFinal.setForeground(Color.DARK_GRAY);
+		txtFinal.setBackground(Color.WHITE);
+		txtFinal.setFont(new Font("Swis721 Hv BT", Font.PLAIN, 11));
+		txtFinal.setBounds(10, 51, 92, 84);
 		contentPane.add(txtFinal);
-				
+		
+		textField = new JTextField();
+		textField.setBounds(106, 33, 77, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(106, 83, 77, 20);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		
+		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 119, 213, 233);
+		scrollPane.setBounds(10, 165, 173, 252);
 		contentPane.add(scrollPane);
 		
-		JTextArea txtResultado = new JTextArea();
-		scrollPane.setViewportView(txtResultado);
+		JTextArea txResultado = new JTextArea();
+		scrollPane.setViewportView(txResultado);
 		
-
+		
 		JButton btnExecutar = new JButton("Executar");
-		btnExecutar.addActionListener(ActionEvent);
+		btnExecutar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				i = Integer.parseInt(txtInicial.getText());
+				i = Integer.parseInt(textField.getText());
 				
-			while (i <= Integer.parseInt(txtFinal.getText())) {
-				dados += i +"\n";
-				i++;
-			}
-			txtResultado.setText(dados);
-			txtInicial.setText("");
-			txtFinal.setText("");
-			dados = "";
+				while(i <= Integer.parseInt(textField_1.getText())){
+					dados += i+"\n";
+					i++;
+					
+					
+				}
+				txResultado.setText(dados);
+				textField.setText("");
+				textField_1.setText("");
+				dados = "";
+				
 			}
 		});
-		btnExecutar.setFont(new Font("Calibri", Font.BOLD, 14));
-		btnExecutar.setBackground(new Color(255, 255, 255));
-		btnExecutar.setForeground(new Color(0, 0, 0));
-		btnExecutar.setBounds(20, 85, 140, 23);
+		btnExecutar.setForeground(Color.DARK_GRAY);
+		btnExecutar.setBackground(Color.PINK);
+		btnExecutar.setBounds(10, 124, 173, 30);
 		contentPane.add(btnExecutar);
 	}
 }

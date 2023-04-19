@@ -20,6 +20,7 @@ public class CriarCliente {
 		
 		//Vamos cadastrar o cliente acima com o comando cadastrar
 		System.out.println(cliente1.cadastrar());
+				
 		
 
 	}
