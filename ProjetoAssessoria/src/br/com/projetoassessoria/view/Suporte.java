@@ -70,7 +70,6 @@ public class Suporte extends JFrame {
 	 * Create the frame.
 	 */
 	public Suporte() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Suporte.class.getResource("/br/com/projetoacessoria/image/zap.png")));
 		try {
 			setTitle("Suporte");
 			setResizable(false);
@@ -158,6 +157,30 @@ public class Suporte extends JFrame {
 			btnDeletar.add(lblDeletar);
 			
 			btnAtualizar = new JPanel();
+			btnAtualizar.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						Assessoria rChamado = new Assessoria();
+						
+						
+						if(txtResponsavel.getText().trim().equals("") || txtStatus.setSelectedItem()!= null || txtId.getText().trim().equals("") 
+								|| txtDataResolucao.getText().trim().equals("")) {
+							JOptionPane.showMessageDialog(null, "Os campos Responsável Chamado, Id do Chamado, Status do Chamado e Data de Resolução devem ser preenchidos",
+									"Erro 202363XXc" , JOptionPane.ERROR_MESSAGE);
+						}
+						else {
+							rChamado.setNomeFuncionario(txtResponsavel.getText());
+							rChamado.setStatusChamado(txtStatus.getSelectedItem());
+							rChamado.setDataResolucao(Date.valueOf(txtDataResolucao.getText()));
+							rChamado.setObservacao(txtObservacoes.getText());
+							rChamado.setIdChamado(id);
+							
+							JOptionPane.showMessageDialog(null, cc.atualizar(rChamado));
+							carregarTabela();
+							limparCampos();
+						}
+					}
+				});
 			btnAtualizar.setBackground(new Color(255, 255, 255));
 			btnAtualizar.setBounds(473, 298, 162, 58);
 			contentPane.add(btnAtualizar);
@@ -229,7 +252,6 @@ public class Suporte extends JFrame {
 	private void limparCampos() {
 		txtResponsavel.setText("");
 		txtDataResolucao.setText("");
-		txtStatus.setAction(JComboBox<E>);
 		txtId.setText("");
 		txtObservacoes.setText("");
 	}

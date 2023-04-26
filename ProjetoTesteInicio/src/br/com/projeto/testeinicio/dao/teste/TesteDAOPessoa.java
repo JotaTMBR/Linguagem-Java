@@ -22,4 +22,18 @@ public class TesteDAOPessoa {
 		Assertions.assertEquals("Seus dados foram recebidos", rs);
 		Assertions.assertEquals("Os campos devem ser preenchidos", rs);
 	}
+	
+	@Test
+	public void testPessoaAtualizada() {
+		
+		DAOPessoa dp = new DAOPessoa();
+		
+		Pessoa pe = new Pessoa(10,"José","josefino@yahoo.com.br");
+		String rs = dp.salvar(pe);
+		System.out.println(pe.getNome());
+		pe.setNome("Márcia");
+		Pessoa rsp = dp.pessoaAtualizada(pe);
+		
+		Assertions.assertEquals("Márcia", rsp);
+	}
 }

@@ -21,4 +21,13 @@ public class DAOPessoa {
 		
 		return msg;
 	}
+	public Pessoa pessoaAtualizada(Pessoa pessoa) {
+		Pessoa pe = pessoa;
+		
+		if(pe.getId()<1||pe.getNome().equals("")||pe.getEmail().equals("")) {
+			new Exception("Preencha todos os campos");
+		}
+		return pe;
+	}
+	
 }

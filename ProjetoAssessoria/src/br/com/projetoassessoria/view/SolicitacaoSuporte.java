@@ -22,6 +22,7 @@ import br.com.projetoassessoria.domain.Assessoria;
 import br.com.projetoassessoria.util.AcessoSSH;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 
 public class SolicitacaoSuporte extends JFrame {
 
@@ -57,6 +58,8 @@ public class SolicitacaoSuporte extends JFrame {
 	 * Create the frame.
 	 */
 	public SolicitacaoSuporte() {
+		setTitle("Suporte - Vivo");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(SolicitacaoSuporte.class.getResource("/vivo-op.png")));
 		
 		try {
 		
